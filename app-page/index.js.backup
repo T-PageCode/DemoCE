@@ -1,0 +1,101 @@
+document.addEventListener("contextmenu",(e) => {
+    e.preventDefault();
+})
+const div1 = document.getElementById("div1");
+const text1 = document.getElementById("text1");
+const text2 = document.getElementById("text2");
+const light = document.getElementById("light");
+const dark = document.getElementById("dark-default");
+const textDarkDefault = document.getElementById("text-dark-default");
+const textLight = document.getElementById("text-light");
+const bg = document.body;
+const btn1 = document.getElementById("btn1");
+const unknownTheme = document.getElementById("unknown-theme");
+let OKNotShowUT = false;
+let themeCache = null;
+function lightMode() {
+    bg.style.backgroundColor = "rgb(230,230,230)";
+    div1.style.backgroundColor = "rgb(220,220,220)";
+    dark.classList.add("borderToggle");
+    light.classList.add("borderToggle");
+    textDarkDefault.style.color = "black";
+    textLight.style.color = "black";
+    text1.style.color = "black";
+    text2.style.color = "black";
+}
+function darkMode() {
+    bg.style.backgroundColor = "rgb(30,30,30)";
+    div1.style.backgroundColor = "rgb(50,50,50)";
+    dark.classList.remove("borderToggle");
+    light.classList.remove("borderToggle");
+    textDarkDefault.style.color = "white";
+    textLight.style.color = "white";
+    text1.style.color = "white";
+    text2.style.color = "white";
+}
+function hiddenUnknownTheme() {
+    unknownTheme.style.opacity = "0";
+    unknownTheme.style.top = "92%";
+    setTimeout(() => {
+        unknownTheme.style.visibility = "hidden";
+    },500)
+}
+function hiddenUnknownThemeBtn() {
+    OKNotShowUT = true;
+    unknownTheme.style.opacity = "0";
+    unknownTheme.style.top = "92%";
+    themeCache = ThemeData;
+    setTimeout(() => {
+        unknownTheme.style.visibility = "hidden";
+        OKNotShowUT = false;
+    },500)
+}
+function ifTheme() {
+    if (OKNotShowUT) return;
+    if (lst === themeCache) return;
+    themeCache = lst;
+    let lst = localStorage.getItem("theme");
+    if (lst === "dark") {
+        hiddenUnknownTheme();
+        darkMode();
+    }
+    else if (lst === "light") {
+        hiddenUnknownTheme();
+        lightMode();
+    }
+    else {
+        unknownTheme.style.visibility = "visible";
+        unknownTheme.style.opacity = "1";
+        unknownTheme.style.top = "90%";
+        requestAnimationFrame(() => {
+            unknownTheme.style.opacity = "1";
+            unknownTheme.style.top = "90%";
+        });
+    }
+}
+ifTheme();
+setInterval(ifTheme, 400);
+div1.style.visibility = "hidden";
+text2.style.visibility = "hidden";
+light.onclick = () => {
+    const ThemeData = "light";
+    lightMode();
+    localStorage.setItem("theme","light");
+    themeCache = ThemeData;
+    hiddenUnknownTheme();
+    ifTheme();
+    setTimeout(() => {
+        OKNotShowUT = false;
+    },500)
+}
+dark.onclick = () => {
+    const ThemeData = "dark";
+    darkMode();
+    localStorage.setItem("theme","dark");
+    themeCache = ThemeData;
+    hiddenUnknownTheme();
+    ifTheme();
+        setTimeout(() => {
+        OKNotShowUT = false;
+    },500)
+}

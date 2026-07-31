@@ -1,0 +1,56 @@
+{
+  "name": "democe",
+  "version": "1.0.0",
+  "description": "Demo CE - T-PC Code Editor",
+  "main": "app-page/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build-win": "electron-builder --win nsis zip",
+    "build-win-setup": "electron-builder --win nsis",
+    "build-win-zip": "electron-builder --win zip"
+  },
+  "keywords": [
+    "editor",
+    "code-editor",
+    "electron",
+    "monaco",
+    "democe"
+  ],
+  "author": "T-PageCode",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^43.2.0",
+    "monaco-editor": "^0.56.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "io.github.t-pagecode.democe",
+    "productName": "Demo CE",
+    "asar": true,
+    "asarUnpack": [
+      "content/Fonts/JetBrainsMonoFonts/**/*"
+    ],
+    "files": [
+      "app-page/**/*",
+      "content/**/*",
+      "node_modules/monaco-editor/min/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "artifactName": "${productName}-v${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

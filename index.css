@@ -56,6 +56,19 @@ body{
     color 0.5s ease,
     top 0.5s ease;
 }
+#text3{
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease,
+    color 0.5s ease,
+    top 0.5s ease;
+}
 @keyframes move1{
     0%{
         top: 30%;
@@ -366,4 +379,22 @@ body{
     height: 60px;
     background-color: rgb(155, 68, 255);
     border-radius: 50%;
+}
+.code-language-select{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color: rgb(120,120,120);
+    border-radius: 25px;
+    opacity: 0;
+    visibility: hidden;
+    width: 40%;
+    height: 50%;
+}
+#code-language-select-c-cpp{
+    top: 34%;
+    left: 25%;
+}
+#code-language-select-web{
+    top: 34%;
+    left: 75%;
 }

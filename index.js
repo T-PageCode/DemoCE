@@ -4,6 +4,7 @@ document.addEventListener("contextmenu",(e) => {
 const div1 = document.getElementById("div1");
 const text1 = document.getElementById("text1");
 const text2 = document.getElementById("text2");
+const text3 = document.getElementById("text3");
 const light = document.getElementById("light");
 const dark = document.getElementById("dark-default");
 const textDarkDefault = document.getElementById("text-dark-default");
@@ -81,10 +82,16 @@ function btn1jx() {
     textLight.style.top = "87%";
     text2.style.top = "36%";
     text2.style.opacity = "0";
-    text2.visibility = "hidden";
     setTimeout(() => {
         dark.style.visibility = "hidden";
         light.style.visibility = "hidden";
+        text2.style.visibility = "hidden";
+    },500)
+    setTimeout(() => {
+        text3.style.top = "35%";
+        text3.style.opacity = "1";
+        text3.style.visibility = "visible";
+        codeLanguageSelect();
     },500)
 }
 setInterval(ifTheme, 400);

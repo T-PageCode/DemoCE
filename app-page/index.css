@@ -88,7 +88,7 @@ body{
 }
 #div1{
     position: absolute;
-    top: 700px;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: rgb(50,50,50);
@@ -296,7 +296,7 @@ body{
 }
 #btn1{
     position: absolute;
-    top: 950px;
+    top: 940px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 120px;
@@ -436,11 +436,31 @@ body{
     transition: opacity 0.5s ease,
     top 0.5s ease;
 }
+.code-language-select-down{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color: rgb(120,120,120);
+    border-radius: 25px;
+    opacity: 0;
+    visibility: hidden;
+    width: 40%;
+    height: 40%;
+    transition: opacity 0.5s ease,
+    top 0.5s ease;
+}
 #code-language-select-c-cpp{
-    top: 33%;
+    top: 23%;
     left: 25%;
 }
 #code-language-select-web{
-    top: 33%;
+    top: 23%;
+    left: 75%;
+}
+#code-language-select-electron{
+    top: 77%;
+    left: 25%;
+}
+#code-language-select-others{
+    top: 77%;
     left: 75%;
 }

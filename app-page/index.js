@@ -15,6 +15,7 @@ const btn2 = document.getElementById("btn2");
 const unknownTheme = document.getElementById("unknown-theme");
 const unknownThemeText = document.getElementById("unknown-theme-text");
 const codeLanguageSelectTop = document.querySelectorAll(".code-language-select-top");
+const codeLanguageSelectDown = document.querySelectorAll(".code-language-select-down")
 let themeCache = null;
 function lightMode() {
     bg.style.backgroundColor = "rgb(230,230,230)";
@@ -31,6 +32,9 @@ function lightMode() {
     codeLanguageSelectTop.forEach((clstforeach) => {
         clstforeach.style.backgroundColor = "rgb(200,200,200)";
     })
+    codeLanguageSelectDown.forEach((clsdforeach) => {
+        clsdforeach.style.backgroundColor = "rgb(200,200,200)";
+    })
 }
 function darkMode() {
     bg.style.backgroundColor = "rgb(30,30,30)";
@@ -44,8 +48,11 @@ function darkMode() {
     text3.style.color = "white";
     unknownTheme.style.backgroundColor = "rgb(90,90,90)"
     unknownThemeText.style.color = "white";
-        codeLanguageSelectTop.forEach((clstforeach) => {
+    codeLanguageSelectTop.forEach((clstforeach) => {
         clstforeach.style.backgroundColor = "rgb(120,120,120)";
+    })
+    codeLanguageSelectDown.forEach((clsdforeach) => {
+        clsdforeach.style.backgroundColor = "rgb(120,120,120)";
     })
 }
 function btn1hidden() {
@@ -91,10 +98,15 @@ function ifTheme() {
     }
 }
 function codeLanguageSelect() {
+    codeLanguageSelectDown.forEach((codeLanguageSelectDownForEach) => {
+        codeLanguageSelectDownForEach.style.visibility = "visible";
+        codeLanguageSelectDownForEach.style.opacity = "1";
+        codeLanguageSelectDownForEach.style.top = "75%";
+    })
     codeLanguageSelectTop.forEach((codeLangSelectTopForEach) => {
         codeLangSelectTopForEach.style.visibility = "visible";
         codeLangSelectTopForEach.style.opacity = "1";
-        codeLangSelectTopForEach.style.top = "35%";
+        codeLangSelectTopForEach.style.top = "25%";
     })
 }
 ifTheme();

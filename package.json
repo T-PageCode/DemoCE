@@ -1,6 +1,6 @@
 {
   "name": "democe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Demo CE - T-PC Code Editor",
   "main": "app-page/main.js",
   "scripts": {
@@ -21,10 +21,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "electron": "^43.2.0",
     "monaco-editor": "^0.56.0"
   },
   "devDependencies": {
+    "electron": "^43.2.0",
     "electron-builder": "^26.15.3"
   },
   "build": {
@@ -40,17 +40,20 @@
       "node_modules/monaco-editor/min/**/*"
     ],
     "win": {
+      "icon": "Build/icon/icon.ico",
       "target": [
         "nsis",
         "zip"
       ],
-      "artifactName": "${productName}-v${version}-${arch}.${ext}"
+      "artifactName": "${productName}-v${version}-${arch}Setup.${ext}"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "createStartMenuShortcut": true,
+      "installerIcon": "Build/icon/insticon.ico",
+      "uninstallerIcon": "Build/icon/uninsticon.ico"
     }
   }
 }

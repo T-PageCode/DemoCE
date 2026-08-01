@@ -28,16 +28,20 @@
             <div id="preview-light-leftbar-tools"></div>
         </div>
         <p id="text-light">浅色主题</p>
-        <div id="code-language-select-c-cpp" class="code-language-select"></div>
-        <div id="code-language-select-web" class="code-language-select"></div>
+        <div id="code-language-select-c-cpp" class="code-language-select-top"></div>
+        <div id="code-language-select-web" class="code-language-select-top"></div>
+        <div id="code-language-select-electron" class="code-language-select-down"></div>
+        <div id="code-language-select-others" class="code-language-select-down"></div>
     </div>
-    <button id="btn1" onclick="btn1jx();">继续</button>
+    <button id="btn1" onclick="btn1jx();btn1hidden()">继续</button>
+    <button id="backbtn1">返回</button>
+    <button id="btn2" onclick="btn2jx();">继续</button>
     <div id="unknown-theme">
         <div class="popup-error-div">
             <img id="error-icon" src="../content/image/ErrorIcon.png">
         </div>
         <h1 id="unknown-theme-text">未知主题,请检查后再试</h1>
-        <button class="popup-ok-btn" onclick="hiddenUnknownThemeBtn()">确定</button>
+        <button class="popup-ok-btn" onclick="hiddenUnknownThemeBtn();">确定</button>
     </div>
     <script src="./js-show1.js"></script>
     <script src="./index.js"></script>

@@ -7,7 +7,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 node_modules/
-
+dist/
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor
 

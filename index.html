@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <title>Demo CE</title>
+</head>
+<body>
+    <h1 id="text1">您想访问的网址是不是<span style="color: rgb(191, 123, 255)">https://t-pagecode.github.io/DemoCE/app-page</span></h1>
+    <p id="text2">编辑器的主页面在app-page目录下,如果您想进入编辑器主界面,请点击”我要进入编辑器主界面“</p>
+    <button id="btn1" onclick="go()">我要进入编辑器主界面</button>
+    <script>
+        const allElements = document.querySelectorAll('*')
+        document.addEventListener("contextmenu",(e) => {
+            e.preventDefault();
+        })
+        function go() {
+            allElements.forEach((el) => {
+               el.style.top = "150%";
+            });
+            setTimeout(() => {
+                window.location.href = "./app-page/index.html"
+            },1500)
+        }
+    </script>
+</body>
+</html>

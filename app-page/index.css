@@ -296,7 +296,7 @@ body{
 }
 #btn1{
     position: absolute;
-    top: 940px;
+    top: 1000px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 120px;
@@ -326,7 +326,7 @@ body{
 }
 #btn2{
     position: absolute;
-    top: 940px;
+    top: 1000px;
     left: calc(50% + 250px);
     transform: translate(-50%,-50%);
     width: 120px;
@@ -357,7 +357,7 @@ body{
 }
 #backbtn1{
     position: absolute;
-    top: 940px;
+    top: 1000px;
     left: calc(50% - 200px);
     transform: translate(-50%,-50%);
     width: 120px;

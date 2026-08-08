@@ -69,15 +69,15 @@ function darkMode() {
 }
 function btn1hidden() {
     btn1.style.opacity = "0";
-    btn1.style.top = "960px";
+    btn1.style.top = "1010px";
     setTimeout(() => {
         btn1.style.visibility = "hidden";
         btn2.style.visibility = "visible";
         btn2.style.opacity = "1";
-        btn2.style.top = "950px";
+        btn2.style.top = "1010px";
         backbtn1.style.visibility = "visible";
         backbtn1.style.opacity = "1";
-        backbtn1.style.top = "950px";
+        backbtn1.style.top = "1010px";
     }, 500)
 }
 function hiddenUnknownTheme() {
@@ -104,12 +104,8 @@ function ifTheme() {
     }
     else {
         unknownTheme.style.visibility = "visible";
-        unknownTheme.style.opacity = "0";
-        unknownTheme.style.top = "92%";
-        requestAnimationFrame(() => {
-            unknownTheme.style.opacity = "1";
-            unknownTheme.style.top = "90%";
-        });
+        unknownTheme.style.opacity = "1";
+        unknownTheme.style.top = "90%";
     }
 }
 function codeLanguageSelect() {
@@ -170,9 +166,21 @@ function backbtn1back() {
         textLight.style.top = "85%";
         dark.style.top = "200px";
         light.style.top = "200px";
-        btn2.style.top = "940px";
-        btn2.style.opacity = "0";
+    },500)
+    btn2.style.top = "1000px";
+    btn2.style.opacity = "0";
+    setTimeout(() => {
         btn2.style.visibility = "hidden";
+    }, 500);
+    backbtn1.style.top = "1000px";
+    backbtn1.style.opacity = "0";
+    setTimeout(() => {
+        backbtn1.style.visibility = "hidden";
+    }, 500);
+    setTimeout(() => {
+        btn1.style.visibility = "visible";
+        btn1.style.opacity = "1";
+        btn1.style.top = "1000px";
     },500)
 }
 setInterval(ifTheme, 400);

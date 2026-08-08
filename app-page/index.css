@@ -34,7 +34,7 @@ body{
 *{
     margin: 0;
     padding: 0;
-    font-family: "Microsoft YaHei",Consolas,"JetBrains Mono",system-ui;
+    font-family: "Microsoft YaHei",Consolas,"JetBrains Mono",system-ui,sans-serif;
     font-weight: 200;
 }
 #text1{
@@ -324,14 +324,10 @@ body{
     height: 35px;
     font-size: 15px;
 }
-#backbtn1{
-    position: absolute;
-    top: 50%;
-}
 #btn2{
     position: absolute;
     top: 940px;
-    left: 50%;
+    left: calc(50% + 250px);
     transform: translate(-50%,-50%);
     width: 120px;
     height: 40px;
@@ -347,13 +343,45 @@ body{
     width 0.5s ease,
     height 0.5s ease,
     font-size 0.5s ease,
-    top 0.5s ease;
+    top 0.5s ease,
+    left 1.5s ease;
 }
 #btn2:hover{
     background-color: rgb(122, 0, 221);
 }
 #btn2:active{
     background-color: rgb(102, 0, 197);
+    width: 110px;
+    height: 35px;
+    font-size: 15px;
+}
+#backbtn1{
+    position: absolute;
+    top: 940px;
+    left: calc(50% - 200px);
+    transform: translate(-50%,-50%);
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(200, 153, 255);
+    border: none;
+    font-size: 18px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: background-color 0.5s ease,
+    opacity 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease,
+    font-size 0.5s ease,
+    top 0.5s ease,
+    left 1.5s ease;
+}
+#backbtn1:hover{
+    background-color: rgb(191, 112, 255);
+}
+#backbtn1:active{
+    background-color: rgb(171, 81, 255);
     width: 110px;
     height: 35px;
     font-size: 15px;
@@ -433,8 +461,7 @@ body{
     visibility: hidden;
     width: 40%;
     height: 40%;
-    transition: opacity 0.5s ease,
-    top 0.5s ease;
+    transition: all 0.5s ease;
 }
 .code-language-select-down{
     position: absolute;
@@ -445,8 +472,34 @@ body{
     visibility: hidden;
     width: 40%;
     height: 40%;
-    transition: opacity 0.5s ease,
-    top 0.5s ease;
+    transition: all 0.5s ease;
+}
+.code-language-select-down.langselected,
+.code-language-select-top.langselected{
+    box-shadow: 0 0 20px rgb(227, 187, 255) !important;
+    background-color: rgb(180, 152, 255) !important;
+    pointer-events: auto;
+}
+.langselect-light-theme .code-language-select-top.langselected,
+.langselect-light-theme .code-language-select-down.langselected {
+    background-color: rgb(220, 200, 255) !important;
+    box-shadow: 0 0 20px rgb(200, 153, 255) !important;
+}
+.langselect-light-theme .code-language-title,
+.langselect-light-theme .code-language-intro{
+    color: black;
+}
+.code-language-select-down,
+.code-language-select-top{
+    cursor: pointer;
+}
+.code-language-select-down:not(.langselected):hover,
+.code-language-select-top:not(.langselected):hover{
+    background-color: rgb(150,150,150) !important;
+}
+.langselect-light-theme .code-language-select-down:not(.langselected):hover,
+.langselect-light-theme .code-language-select-top:not(.langselected):hover{
+    background-color: rgb(190, 190, 190) !important;
 }
 #code-language-select-c-cpp{
     top: 23%;
@@ -463,4 +516,18 @@ body{
 #code-language-select-others{
     top: 77%;
     left: 75%;
+}
+.code-language-title{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 30px;
+    color: white;
+}
+.code-language-intro{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 20px;
+    color: white;
 }

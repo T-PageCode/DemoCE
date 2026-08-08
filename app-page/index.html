@@ -28,14 +28,27 @@
             <div id="preview-light-leftbar-tools"></div>
         </div>
         <p id="text-light">浅色主题</p>
-        <div id="code-language-select-c-cpp" class="code-language-select-top"></div>
-        <div id="code-language-select-web" class="code-language-select-top"></div>
-        <div id="code-language-select-electron" class="code-language-select-down"></div>
-        <div id="code-language-select-others" class="code-language-select-down"></div>
+        <div id="code-language-select-c-cpp" class="code-language-select-top">
+            <h1 class="code-language-title">C/C++开发</h1>
+            <p class="code-language-intro">深入底层逻辑,难度较高的语言</p>
+        </div>
+        <div id="code-language-select-web" class="code-language-select-top">
+            <h1 class="code-language-title">Web开发</h1>
+            <p class="code-language-intro">一般指前端(HTML CSS JS),是网页使用最广泛的技术<span style="font-size: 15px;opacity: 0.7;">(可能也是后端,全栈等)</span></p>
+        </div>
+        <div id="code-language-select-electron" class="code-language-select-down">
+            <h1 class="code-language-title">Electron开发</h1>
+            <p class="code-language-intro">可把前端代码打包成桌面程序</p>
+        </div>
+        <div id="code-language-select-others" class="code-language-select-down">
+            <h1 class="code-language-title">其他</h1>
+            <p class="code-language-intro">其他,都不是这3项</p>
+        </div>
     </div>
     <button id="btn1" onclick="btn1jx();btn1hidden()">继续</button>
-    <button id="backbtn1">返回</button>
+    <button id="backbtn1" onclick="backbtn1back()">返回</button>
     <button id="btn2" onclick="btn2jx();">继续</button>
+    <button id="tgbtn1">跳过</button>
     <div id="unknown-theme">
         <div class="popup-error-div">
             <img id="error-icon" src="../content/image/ErrorIcon.png">

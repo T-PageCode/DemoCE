@@ -12,10 +12,20 @@ const textLight = document.getElementById("text-light");
 const bg = document.body;
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
+const backbtn1 = document.getElementById("backbtn1");
 const unknownTheme = document.getElementById("unknown-theme");
 const unknownThemeText = document.getElementById("unknown-theme-text");
 const codeLanguageSelectTop = document.querySelectorAll(".code-language-select-top");
-const codeLanguageSelectDown = document.querySelectorAll(".code-language-select-down")
+const codeLanguageSelectDown = document.querySelectorAll(".code-language-select-down");
+const allLangCards = document.querySelectorAll(".code-language-select-top, .code-language-select-down");
+let selectedLang = null;
+allLangCards.forEach((langcard) => {
+    langcard.addEventListener("click", () => {
+        allLangCards.forEach((c) => c.classList.remove("langselected"));
+        langcard.classList.add("langselected");
+        selectedLang = langcard.id;
+    });
+});
 let themeCache = null;
 function lightMode() {
     bg.style.backgroundColor = "rgb(230,230,230)";
@@ -35,6 +45,7 @@ function lightMode() {
     codeLanguageSelectDown.forEach((clsdforeach) => {
         clsdforeach.style.backgroundColor = "rgb(200,200,200)";
     })
+    div1.classList.add("langselect-light-theme")
 }
 function darkMode() {
     bg.style.backgroundColor = "rgb(30,30,30)";
@@ -54,6 +65,7 @@ function darkMode() {
     codeLanguageSelectDown.forEach((clsdforeach) => {
         clsdforeach.style.backgroundColor = "rgb(120,120,120)";
     })
+    div1.classList.remove("langselect-light-theme")
 }
 function btn1hidden() {
     btn1.style.opacity = "0";
@@ -63,7 +75,10 @@ function btn1hidden() {
         btn2.style.visibility = "visible";
         btn2.style.opacity = "1";
         btn2.style.top = "950px";
-    },500)
+        backbtn1.style.visibility = "visible";
+        backbtn1.style.opacity = "1";
+        backbtn1.style.top = "950px";
+    }, 500)
 }
 function hiddenUnknownTheme() {
     unknownTheme.style.opacity = "0";
@@ -131,6 +146,33 @@ function btn1jx() {
         text3.style.opacity = "1";
         text3.style.visibility = "visible";
         codeLanguageSelect();
+    },500)
+}
+function backbtn1back() {
+    codeLanguageSelectTop.forEach((codeLangSelectTopForEach) => {    
+        codeLangSelectTopForEach.style.top = "23%";
+        codeLangSelectTopForEach.style.opacity = "0";
+        codeLangSelectTopForEach.style.visibility = "hidden";
+    })
+    codeLanguageSelectDown.forEach((codeLangSelectDownForEach) => {
+        codeLangSelectDownForEach.style.top = "77%";
+        codeLangSelectDownForEach.style.opacity = "0";
+        codeLangSelectDownForEach.style.visibility = "hidden";
+    })
+    setTimeout(() => {
+        dark.style.visibility = "visible";
+        light.style.visibility = "visible";
+        dark.style.opacity = "1";
+        light.style.opacity = "1";
+        textDarkDefault.style.opacity = "1";
+        textDarkDefault.style.top = "85%";
+        textLight.style.opacity = "1";
+        textLight.style.top = "85%";
+        dark.style.top = "200px";
+        light.style.top = "200px";
+        btn2.style.top = "940px";
+        btn2.style.opacity = "0";
+        btn2.style.visibility = "hidden";
     },500)
 }
 setInterval(ifTheme, 400);

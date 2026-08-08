@@ -181,6 +181,14 @@ function backbtn1back() {
         btn1.style.visibility = "visible";
         btn1.style.opacity = "1";
         btn1.style.top = "1000px";
+    },500);
+    text3.style.opacity = "0";
+    text3.style.top = "34%";
+    setTimeout(() => {
+        text3.style.visibility = "hidden";
+        text2.style.visibility = "visible";
+        text2.style.opacity = "1";
+        text2.style.top = "35%";
     },500)
 }
 setInterval(ifTheme, 400);

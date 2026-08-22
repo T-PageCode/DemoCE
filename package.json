@@ -1,6 +1,6 @@
 {
   "name": "democe",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Demo CE - T-PC Code Editor",
   "main": "app-page/main.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "electron .",
     "build-win": "electron-builder --win nsis zip",
     "build-win-setup": "electron-builder --win nsis",
-    "build-win-zip": "electron-builder --win zip"
+    "build-win-zip": "electron-builder --win zip",
+    "build-linux": "electron-builder --linux deb rpm AppImage"
   },
   "keywords": [
     "editor",

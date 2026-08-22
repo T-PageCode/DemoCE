@@ -18,6 +18,7 @@ const unknownThemeText = document.getElementById("unknown-theme-text");
 const codeLanguageSelectTop = document.querySelectorAll(".code-language-select-top");
 const codeLanguageSelectDown = document.querySelectorAll(".code-language-select-down");
 const allLangCards = document.querySelectorAll(".code-language-select-top, .code-language-select-down");
+const tgbtn1 = document.getElementById("tgbtn1");
 let selectedLang = null;
 allLangCards.forEach((langcard) => {
     langcard.addEventListener("click", () => {
@@ -69,15 +70,15 @@ function darkMode() {
 }
 function btn1hidden() {
     btn1.style.opacity = "0";
-    btn1.style.top = "1010px";
+    btn1.style.top = "calc(50% + 400px)";
     setTimeout(() => {
         btn1.style.visibility = "hidden";
         btn2.style.visibility = "visible";
         btn2.style.opacity = "1";
-        btn2.style.top = "1010px";
+        btn2.style.top = "calc(50% + 390px)";
         backbtn1.style.visibility = "visible";
         backbtn1.style.opacity = "1";
-        backbtn1.style.top = "1010px";
+        backbtn1.style.top = "calc(50% + 390px)";
     }, 500)
 }
 function hiddenUnknownTheme() {
@@ -132,10 +133,13 @@ function btn1jx() {
     textLight.style.top = "87%";
     text2.style.top = "36%";
     text2.style.opacity = "0";
+    tgbtn1.style.opacity = "0";
+    tgbtn1.style.top = "calc(50% + 400px)"
     setTimeout(() => {
         dark.style.visibility = "hidden";
         light.style.visibility = "hidden";
         text2.style.visibility = "hidden";
+        tgbtn1.style.visibility = "hidden";
     },500)
     setTimeout(() => {
         text3.style.top = "36%";
@@ -167,12 +171,12 @@ function backbtn1back() {
         dark.style.top = "200px";
         light.style.top = "200px";
     },500)
-    btn2.style.top = "1000px";
+    btn2.style.top = "calc(50% + 400px)";
     btn2.style.opacity = "0";
     setTimeout(() => {
         btn2.style.visibility = "hidden";
     }, 500);
-    backbtn1.style.top = "1000px";
+    backbtn1.style.top = "calc(50% + 400px)";
     backbtn1.style.opacity = "0";
     setTimeout(() => {
         backbtn1.style.visibility = "hidden";
@@ -180,7 +184,10 @@ function backbtn1back() {
     setTimeout(() => {
         btn1.style.visibility = "visible";
         btn1.style.opacity = "1";
-        btn1.style.top = "1000px";
+        btn1.style.top = "calc(50% + 390px)";
+        tgbtn1.style.visibility = "visible";
+        tgbtn1.style.opacity = "1";
+        tgbtn1.style.top = "calc(50% + 390px)"
     },500);
     text3.style.opacity = "0";
     text3.style.top = "35%";

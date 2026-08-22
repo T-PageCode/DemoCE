@@ -5,4 +5,6 @@ setTimeout(() => {
     text2.style.opacity = "1";
     btn1.style.visibility = "visible";
     btn1.style.opacity = "1";
+    tgbtn1.style.visibility = "visible";
+    tgbtn1.style.opacity = "1";
 },2500)

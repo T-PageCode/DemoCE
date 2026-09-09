@@ -19,6 +19,8 @@ const codeLanguageSelectTop = document.querySelectorAll(".code-language-select-t
 const codeLanguageSelectDown = document.querySelectorAll(".code-language-select-down");
 const allLangCards = document.querySelectorAll(".code-language-select-top, .code-language-select-down");
 const tgbtn1 = document.getElementById("tgbtn1");
+const okBtn = document.getElementById("ok-btn");
+const ok = document.getElementById("ok");
 let selectedLang = null;
 allLangCards.forEach((langcard) => {
     langcard.addEventListener("click", () => {
@@ -148,6 +150,36 @@ function btn1jx() {
         codeLanguageSelect();
     },500)
 }
+function btn2jx() {
+    codeLanguageSelectTop.forEach((codeLangSelectTopForEach) => {    
+        codeLangSelectTopForEach.style.top = "23%";
+        codeLangSelectTopForEach.style.opacity = "0";
+        codeLangSelectTopForEach.style.visibility = "hidden";
+    })
+    codeLanguageSelectDown.forEach((codeLangSelectDownForEach) => {
+        codeLangSelectDownForEach.style.top = "77%";
+        codeLangSelectDownForEach.style.opacity = "0";
+        codeLangSelectDownForEach.style.visibility = "hidden";
+    })
+    text3.style.opacity = "0";
+    text3.style.top = "35%";
+    setTimeout(() => {
+        text3.style.visibility = "hidden";
+    },500)
+    btn2.style.top = "calc(50% + 400px)";
+    btn2.style.opacity = "0";
+    backbtn1.style.top = "calc(50% + 400px)";
+    backbtn1.style.opacity = "0";
+    setTimeout(() => {
+        btn2.style.visibility = "hidden";
+        backbtn1.style.visibility = "hidden";
+        okBtn.style.visibility = "visible";
+        okBtn.style.opacity = "1";
+        okBtn.style.top = "calc(50% + 390px)";
+        ok.style.visibility = "visible";
+        ok.style.opacity = "1";
+    },500);
+}
 function backbtn1back() {
     codeLanguageSelectTop.forEach((codeLangSelectTopForEach) => {    
         codeLangSelectTopForEach.style.top = "23%";
@@ -203,15 +235,19 @@ div1.style.visibility = "hidden";
 text2.style.visibility = "hidden";
 light.onclick = () => {
     const ThemeData = "light";
-    localStorage.setItem("theme", ThemeData);
+    localStorage.setItem("theme",ThemeData);
     themeCache = ThemeData;
     lightMode();
     hiddenUnknownTheme();
 }
 dark.onclick = () => {
     const ThemeData = "dark";
-    localStorage.setItem("theme", ThemeData);
+    localStorage.setItem("theme",ThemeData);
     themeCache = ThemeData;
     darkMode();
     hiddenUnknownTheme();
+}
+tgbtn1.onclick = () => {
+    btn1jx();
+    btn1hidden();
 }

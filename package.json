@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "Demo CE - T-PC Code Editor",
   "main": "app-page/main.js",
+  "author": {
+    "name": "T-PageCode",
+    "email": "cdt20260@outlook.com"
+   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
@@ -18,7 +22,6 @@
     "monaco",
     "democe"
   ],
-  "author": "T-PageCode",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

@@ -42,6 +42,8 @@ function lightMode() {
     text3.style.color = "black";
     unknownTheme.style.backgroundColor = "rgb(210,210,210)";
     unknownThemeText.style.color = "black";
+    ok.style.backgroundColor = "rgb(210,210,210)";
+    ok.style.color = "black";
     codeLanguageSelectTop.forEach((clstforeach) => {
         clstforeach.style.backgroundColor = "rgb(200,200,200)";
     })
@@ -62,6 +64,8 @@ function darkMode() {
     text3.style.color = "white";
     unknownTheme.style.backgroundColor = "rgb(90,90,90)"
     unknownThemeText.style.color = "white";
+    ok.style.backgroundColor = "rgb(100,100,100)";
+    ok.style.color = "white";
     codeLanguageSelectTop.forEach((clstforeach) => {
         clstforeach.style.backgroundColor = "rgb(120,120,120)";
     })

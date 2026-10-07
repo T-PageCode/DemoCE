@@ -1,7 +1,7 @@
 {
   "name": "democe",
-  "version": "1.0.4",
-  "description": "Demo CE - T-PC Code Editor",
+  "version": "1.0.5",
+  "description": "Demo CE - T-PageCode Code Editor",
   "main": "app-page/main.js",
   "author": {
     "name": "T-PageCode",
